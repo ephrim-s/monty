@@ -1,22 +1,20 @@
 #include "stacks.h"
-
 /**
- * add_stk - add two elements at the front of the stack
- * @head: points to the head of the stack
- * @line_cnt: counts number of lines
+ * stk_add - adds the top two elements of the stack.
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
- */
-
-void add_stk(stack_t **head, unsigned int line_cnt)
+*/
+void stk_add(stack_t **head, unsigned int line_cnt)
 {
-	stack_t *k;
+	stack_t *h;
 	int len = 0, join;
 
-	k = *head;
-	while (k)
+	h = *head;
+	while (h)
 	{
-		k = k->next;
-		len + 1;
+		h = h->next;
+		len++;
 	}
 	if (len < 2)
 	{
@@ -26,9 +24,9 @@ void add_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	k = *head;
-	join = k->n + k->next->n;
-	k->next->n = join;
-	*head = k->next;
-	free(k);
+	h = *head;
+	join = h->n + h->next->n;
+	h->next->n = join;
+	*head = h->next;
+	free(h);
 }

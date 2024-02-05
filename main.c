@@ -1,9 +1,9 @@
 #include "stacks.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 /**
-* main - main Entry
-* @argc: arguments count
-* @argv: arguments vector
+* main - monty code interpreter
+* @argc: number of arguments
+* @argv: monty file location
 * Return: 0 on success
 */
 int main(int argc, char *argv[])

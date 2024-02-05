@@ -1,22 +1,20 @@
 #include "stacks.h"
-
 /**
- * div_stk - seperates top element from the rear element
- * @head: points to head of stack
- * @line_cnt: counts number of lines
+ * stk_div - divides the top two elements of the stack.
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
- */
-
-void div_stk(stack_t **head, unsigned int line_cnt)
+*/
+void stk_div(stack_t **head, unsigned int line_cnt)
 {
-	stack_t *k;
+	stack_t *h;
 	int len = 0, join;
 
-	k = *head;
-	while (k)
+	h = *head;
+	while (h)
 	{
-		k = k->next;
-		len + 1;
+		h = h->next;
+		len++;
 	}
 	if (len < 2)
 	{
@@ -26,8 +24,8 @@ void div_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	k = *head;
-	if (k->n == 0)
+	h = *head;
+	if (h->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_cnt);
 		fclose(bus.file);
@@ -35,8 +33,8 @@ void div_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	join = k->next->n / k->n;
-	k->next->n = join;
-	*head = k->next;
-	free(k);
+	join = h->next->n / h->n;
+	h->next->n = join;
+	*head = h->next;
+	free(h);
 }

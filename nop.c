@@ -1,11 +1,11 @@
 #include "stacks.h"
 /**
-  *nop_stk- None
-  *@head: points to the head of stack
-  *@line_cnt: counts number of lines
+  *stk_nop- nothing
+  *@head: stack head
+  *@line_cnt: line_number
   *Return: none
  */
-void nop_stk(stack_t **head, unsigned int line_cnt)
+void stk_nop(stack_t **head, unsigned int line_cnt)
 {
 	(void) line_cnt;
 	(void) head;

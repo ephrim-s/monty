@@ -1,16 +1,17 @@
 #include "stacks.h"
 /**
- * pchar_stk - displays characters at the front
- * @head: points to the head of the stack
- * @line_cnt: counts number of lines
+ * stk_pchar - prints the char at the top of the stack,
+ * followed by a new line
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
 */
-void pchar_stk(stack_t **head, unsigned int line_cnt)
+void stk_pchar(stack_t **head, unsigned int line_cnt)
 {
-	stack_t *k;
+	stack_t *h;
 
-	k = *head;
-	if (!k)
+	h = *head;
+	if (!h)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_cnt);
 		fclose(bus.file);
@@ -18,7 +19,7 @@ void pchar_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	if (k->n > 127 || k->n < 0)
+	if (h->n > 127 || h->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_cnt);
 		fclose(bus.file);
@@ -26,5 +27,5 @@ void pchar_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", k->n);
+	printf("%c\n", h->n);
 }

@@ -1,11 +1,11 @@
 #include "stacks.h"
 /**
- * addnode_stk - create node at the ahead
+ * addnode - add node to the head stack
  * @head: points to the head of stack
- * @i: value of the new line
+ * @n: new_value
  * Return: none
 */
-void addnode_stk(stack_t **head, int i)
+void addnode(stack_t **head, int n)
 {
 
 	stack_t *new_node, *join;
@@ -15,9 +15,9 @@ void addnode_stk(stack_t **head, int i)
 	if (new_node == NULL)
 	{ printf("Error\n");
 		exit(0); }
-	if (aux)
+	if (join)
 		join->prev = new_node;
-	new_node->i = i;
+	new_node->n = n;
 	new_node->next = *head;
 	new_node->prev = NULL;
 	*head = new_node;

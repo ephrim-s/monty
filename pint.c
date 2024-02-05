@@ -1,11 +1,11 @@
 #include "stacks.h"
 /**
- * pint_stk - displays the front
- * @head: points to the head of stack
- * @line_cnt: counts number of lines
+ * stk_pint - prints the top
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
 */
-void pint_stk(stack_t **head, unsigned int line_cnt)
+void stk_pint(stack_t **head, unsigned int line_cnt)
 {
 	if (*head == NULL)
 	{

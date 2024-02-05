@@ -1,28 +1,26 @@
 #include "stacks.h"
-
 /**
- * rotr_stk - turns the stack to the rear
- * @head: points to the head of stack
- * @line_cnt: counts number of lines
- * Return: none
+  *stk_rotr- rotates the stack to the bottom
+  *@head: stack head
+  *@line_cnt: line_number
+  *Return: none
  */
-
-void rotr_stk(stack_t **head, __attribute__((unused)) int line_cnt)
+void stk_rotr(stack_t **head, __attribute__((unused)) unsigned int line_cnt)
 {
-	stack_t *dup;
+	stack_t *copy;
 
-	dup = *head;
+	copy = *head;
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		return;
 	}
-	while (dup->next)
+	while (copy->next)
 	{
-		dup = dup->next;
+		copy = copy->next;
 	}
-	dup->next = *head;
-	dup->prev->next = NULL;
-	dup->prev = NULL;
-	(*head)->prev = dup;
-	(*head) = dup;
+	copy->next = *head;
+	copy->prev->next = NULL;
+	copy->prev = NULL;
+	(*head)->prev = copy;
+	(*head) = copy;
 }

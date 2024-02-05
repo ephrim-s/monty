@@ -1,13 +1,13 @@
 #include "stacks.h"
 /**
- * pop_stk - displays the top
- * @head: points to the head of stack
- * @line_cnt: counts number of lines
+ * stk_pop - prints the top
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
 */
-void pop_stk(stack_t **head, unsigned int line_cnt)
+void stk_pop(stack_t **head, unsigned int line_cnt)
 {
-	stack_t *k;
+	stack_t *h;
 
 	if (*head == NULL)
 	{
@@ -17,7 +17,7 @@ void pop_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	k = *head;
-	*head = k->next;
-	free(k);
+	h = *head;
+	*head = h->next;
+	free(h);
 }

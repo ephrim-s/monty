@@ -1,23 +1,21 @@
 #include "stacks.h"
-
 /**
- * pall_stk - displays stack
- * @head: points to the head of stack
- * #line_cnt: counts number of lines
+ * stk_pall - prints the stack
+ * @head: stack head
+ * @line_cnt: no used
  * Return: none
- */
-
-void pall_stk(stack_t **head, unsigned int line_cnt)
+*/
+void stk_pall(stack_t **head, unsigned int line_cnt)
 {
-	stack_t *k;
+	stack_t *h;
 	(void)line_cnt;
 
-	k = *head;
-	if (k == NULL)
+	h = *head;
+	if (h == NULL)
 		return;
-	while (k)
+	while (h)
 	{
-		printf("%d", k->n);
-		k = k->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }

@@ -1,11 +1,11 @@
 #include "stacks.h"
 /**
- * queue_stk - displays the top
- * @head: points to the head of the stack
- * @line_cnt: counts number of lines
+ * stk_queue - prints the top
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
 */
-void queue_stk(stack_t **head, unsigned int line_cnt)
+void stk_queue(stack_t **head, unsigned int line_cnt)
 {
 	(void)head;
 	(void)line_cnt;
@@ -13,12 +13,12 @@ void queue_stk(stack_t **head, unsigned int line_cnt)
 }
 
 /**
- * addqueue_stk - add node to the tail
+ * addqueue - add node to the tail stack
  * @n: new_value
  * @head: points to the head of stack
  * Return: none
 */
-void addqueue_stk(stack_t **head, int n)
+void addqueue(stack_t **head, int n)
 {
 	stack_t *new_node, *join;
 

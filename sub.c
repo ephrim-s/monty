@@ -1,14 +1,14 @@
 #include "stacks.h"
 /**
-  *sub_stk - substration
-  *@head: points to the head of stack
-  *@line_cnt: counts number of lines
+  *stk_sub- sustration
+  *@head: stack head
+  *@line_cnt: line_number
   *Return: none
  */
-void sub_stk(stack_t **head, unsigned int line_cnt)
+void stk_sub(stack_t **head, unsigned int line_cnt)
 {
 	stack_t *join;
-	int sub, nodes;
+	int sus, nodes;
 
 	join = *head;
 	for (nodes = 0; join != NULL; nodes++)
@@ -22,9 +22,8 @@ void sub_stk(stack_t **head, unsigned int line_cnt)
 		exit(EXIT_FAILURE);
 	}
 	join = *head;
-	sub = join->next->n - join->n;
-	join->next->n = sub;
+	sus = join->next->n - join->n;
+	join->next->n = sus;
 	*head = join->next;
 	free(join);
 }
-

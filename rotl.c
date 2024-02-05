@@ -1,13 +1,13 @@
 #include "stacks.h"
 /**
-  *rotl_stk- turns the stack to the top
-  *@head: points to the head of stack
-  *@line_cnt: counts number of lines
+  *stk_rotl- rotates the stack to the top
+  *@head: stack head
+  *@line_cnt: line_number
   *Return: none
  */
-void rotl_stk(stack_t **head,  __attribute__((unused)) unsigned int line_cnt)
+void stk_rotl(stack_t **head,  __attribute__((unused)) unsigned int line_cnt)
 {
-	stack_t *temp = *head, *join;
+	stack_t *tmp = *head, *join;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
@@ -15,12 +15,12 @@ void rotl_stk(stack_t **head,  __attribute__((unused)) unsigned int line_cnt)
 	}
 	join = (*head)->next;
 	join->prev = NULL;
-	while (temp->next != NULL)
+	while (tmp->next != NULL)
 	{
-		temp = temp->next;
+		tmp = tmp->next;
 	}
-	temp->next = *head;
+	tmp->next = *head;
 	(*head)->next = NULL;
-	(*head)->prev = temp;
+	(*head)->prev = tmp;
 	(*head) = join;
 }

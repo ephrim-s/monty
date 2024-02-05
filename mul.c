@@ -1,20 +1,20 @@
 #include "stacks.h"
 /**
- * mul_stk - multiplies the two front element of the stack
- * @head: points to the head of stack
- * @line_cnt: counts number of lines
+ * stk_mul - multiplies the top two elements of the stack.
+ * @head: stack head
+ * @line_cnt: line_number
  * Return: none
 */
-void mul_stk(stack_t **head, unsigned int line_cnt)
+void stk_mul(stack_t **head, unsigned int line_cnt)
 {
-	stack_t *k;
+	stack_t *h;
 	int len = 0, join;
 
-	k = *head;
-	while (k)
+	h = *head;
+	while (h)
 	{
-		k = k->next;
-		len + 1;
+		h = h->next;
+		len++;
 	}
 	if (len < 2)
 	{
@@ -24,9 +24,9 @@ void mul_stk(stack_t **head, unsigned int line_cnt)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	k = *head;
-	join = k->next->n * k->n;
-	k->next->n = join;
-	*head = k->next;
-	free(k);
+	h = *head;
+	join = h->next->n * h->n;
+	h->next->n = join;
+	*head = h->next;
+	free(h);
 }
